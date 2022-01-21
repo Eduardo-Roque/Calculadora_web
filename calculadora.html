@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        .fundo{
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background-image: linear-gradient(45deg,black, rgb(69, 69, 251))
+        }
+        .Calculadora{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 80%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10%;
+            padding: 15px;
+        }
+        .botao{
+            height: 50px;
+            width: 50px;
+            font-size: 25px;
+            margin: 3px;
+            cursor: pointer;
+            background-color: rgb(31,31,31);
+            border: none;
+            color: white;
+        }
+        .botao:hover{
+            background-color: black;
+        }
+        #resultado{
+            background-color: white;
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="fundo">
+        <h1>Eduardo do Amaral Roque</h1>
+        <div class="Calculadora">
+            <h1>Calculadora</h1>
+            <p id="resultado"></p>
+            <table>
+                <!--1 Linha da Calculadora-->
+                <tr>
+                    <td><button class="botao" onclick="clean()">C</button></td>
+                    <td><button class="botao" onclick="back()"><</button></td>
+                    <td><button class="botao" onclick="insert('/')">/</button></td>
+                    <td><button class="botao" onclick="insert('X')">X</button></td>
+                </tr>
+                <!--2 Linha da Calculadora-->
+                <tr>
+                    <td><button class="botao" onclick="insert('7')">7</button></td>
+                    <td><button class="botao" onclick="insert('8')">8</button></td>
+                    <td><button class="botao" onclick="insert('9')">9</button></td>
+                    <td><button class="botao" onclick="insert('-')">-</button></td>
+                </tr>
+                <!--3 Linha da Calculadora-->
+                <tr>
+                    <td><button class="botao" onclick="insert('4')">4</button></td>
+                    <td><button class="botao" onclick="insert('5')">5</button></td>
+                    <td><button class="botao" onclick="insert('6')">6</button></td>
+                    <td><button class="botao" onclick="insert('+')">+</button></td>
+                </tr>
+                <!--3 Linha da Calculadora-->
+                <tr>
+                    <td><button class="botao" onclick="insert('1')">1</button></td>
+                    <td><button class="botao" onclick="insert('2')">2</button></td>
+                    <td><button class="botao" onclick="insert('3')">3</button></td>
+                    <td rowspan="2"><button class="botao" style="height: 106px;">=</button></td>
+                </tr>
+                <!--4 Linha da Calculadora-->
+                <tr>
+                    <td colspan="2"><button class="botao" style="width: 105px;">0</button></td>
+                    <td><button class="botao">.</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function insert(num)
+        {
+            var numero = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = numero + num;
+        }
+        function clean()
+        {
+            document.getElementById('resultado').innerHTML = "";
+        }
+        function back()
+        {
+            document.getElementById('resultado').innerHTML = "";
+        }
+    </script>
+</body>
+</html>
